@@ -1,0 +1,120 @@
+$base-font-family: 'Roboto', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 300;
+
+$base-h-padding: 10%;
+$base-v-padding: 30px;
+
+$small-v-padding: 15px;
+
+@mixin navbar($bg, $text-color, $v-padding: $small-v-padding, $h-padding: $base-h-padding) {
+	background: $bg;
+	padding: 0 $h-padding;
+	li {
+		display: inline-block;
+		padding: $v-padding 10px;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+	}
+	li:first-of-type {
+		padding-left: 0;
+	}
+	li:last-of-type {
+		padding-right: 0;
+	}
+	a {
+		color: $text-color;
+	}
+	a:hover {
+		color: $white;
+	}
+}
+
+@mixin fancy-list($primary-color: $primary-color, $secondary-color: $primary-color-light) {
+	li {
+		@include row();
+		border-left: 3px solid $secondary-color;
+		margin-left: 14px;
+		padding-left: 36px;
+		padding-top: 16px;
+		&:first-of-type {
+			padding-top: 0;
+		}
+		&:before {
+			display: block;
+			float: left;
+			content: "";
+			width: 25px;
+			height: 25px;
+			background: $primary-color;
+			border-radius: 50%;
+			border: 6px solid $secondary-color;
+			margin-left: -50px;
+		}
+		&:hover:before {
+			border: 5px solid $secondary-color;
+		}
+		.title {
+			font-weight: 400;
+			font-size: $base-font-size;
+			display: inline-block;
+			width: 90%;
+			padding-top: .4em;
+		}
+		.date {
+			font-weight: 400;
+			font-size: $base-font-size;
+			float: right;
+			display: inline-block;
+		}		
+		.description {
+			font-size: $base-font-size;
+			padding-right: 50px;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			border-bottom: 2px solid #ddd;
+		}
+
+	}
+}
+
+@mixin table-list($primary-color: $primary-color, $secondary-color: $primary-color-light) {
+	li {
+		border-left: 3px solid $secondary-color;
+		margin-left: 14px;
+		padding-left: 36px;
+		padding-top: 1em;
+		&:first-of-type {
+			padding-top: 0;
+		}
+		&:before {
+			display: block;
+			float: left;
+			content: "";
+			width: 25px;
+			height: 25px;
+			background: $primary-color;
+			border-radius: 50%;
+			border: 6px solid $secondary-color;
+			margin-left: -50px;
+		}
+		&:hover:before {
+			border: 5px solid $secondary-color;
+		}
+		table {
+			width: 100%;
+			border-bottom: 2px solid #ddd;
+		}
+		th:last-of-type {
+			font-weight: 400;
+			text-align: right;
+		}
+		th:first-of-type {
+			width: 90%;
+		}
+	}
+
+}
+
+@import "colors";
+@import "grid";

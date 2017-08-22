@@ -1,0 +1,42 @@
+header {
+	@include row();
+}
+
+nav {
+	font-size: $base-font-size;
+	background: $primary-color-dark;
+	color: $primary-color-light;
+	@include navbar($primary-color-dark, $primary-color-light, $small-v-padding, $base-h-padding);
+
+	.active {
+		border-bottom: 2px solid white;
+	}
+}
+
+.hero {
+	padding: $base-v-padding 0;
+	background: $primary-color;
+	section {
+		@include col(2, 3);
+		padding-left: $base-h-padding;
+	}
+	aside {
+		@include col(1, 3);
+		padding-right: $base-h-padding;
+		text-align: right;
+	}
+	h1 {
+		color: white;
+		letter-spacing: .04em;
+	}
+	h3 {
+		color: $primary-color-light;
+		line-height: 1.5em;
+	}
+	img {
+		height: 125px;
+		width: 125px;
+		border-radius: 50%;
+	}
+
+}
